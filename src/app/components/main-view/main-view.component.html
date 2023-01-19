@@ -18,6 +18,7 @@
                     <td>{{user.last_name}}</td>
                     <td>{{user.email}}</td>
                 </tr>
+                <tr *ngIf="!usersResponse?.total"><td class="no-results" colspan="5">No results</td></tr>
             </tbody>
         </table>
         <ul class="pagination d-flex justify-content-end p-0">
