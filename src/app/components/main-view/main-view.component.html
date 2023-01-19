@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="mt-3">
+        <table class="table align-middle" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Avatar</th>
+                    <th>Name</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of usersResponse?.data; index as i">
+                    <th>{{i + 1 + 10 * (pageNumber - 1)}}</th>
+                    <td><img [src]="user.avatar" alt="avatar" /></td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ul class="pagination d-flex justify-content-end p-0">
+            <li class="page-item"><button class="page-link" [disabled]="usersResponse?.page === 1" (click)="previousPage()">Previous</button></li>
+            <li class="page-item"><button class="page-link" [disabled]="usersResponse?.page === usersResponse?.total_pages" (click)="nextPage()">Next</button></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+    border-radius: 25%;
+}
+
+button:disabled {
+    color: gray;
+
+    &:hover {
+        background-color: initial;
+    }
+}
